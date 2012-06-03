@@ -1,0 +1,8 @@
+name = Quick Notes
+description = Enables Quick Notes, user can write his note.
+core = 7.x
+package = User interface
+dependencies[] = webform
+version = "7.x-1.1"
+core = "7.x"
+project = "quick_notes"

@@ -1,0 +1,120 @@
+<?php
+// $Id: quick_notes.module,v 1.4 2012/06/02 01:32:42 Ragini Exp $
+
+/**
+* Implements hook_block_info().
+*/
+function quick_notes_block_info() {
+  $blocks['quick_notes'] = array(
+    'info' => t('Quick Notes'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*
+* Prepares the contents of the block.
+*/
+function quick_notes_block_view($delta) {
+  $block = array();
+  switch ($delta) {
+    case 'quick_notes':
+      $block['subject'] = t('Quick Notes');
+      $block['content'] = _quick_note_content();
+      return $block;
+
+  }
+}
+
+/**
+* get quick note submitted balue
+*/
+function get_quick_note_submission() {
+	global $user;
+	include_once(drupal_get_path('module', 'webform') ."/includes/webform.submissions.inc");
+	$submission = webform_get_submissions(array('nid' => 56, 'uid' => $user->uid));
+
+	return $submission;
+}
+
+
+/**
+* function call back on quick note block..
+*/
+function _quick_note_content() {  
+$submission = get_quick_note_submission();
+
+  if(sizeof($submission)) {
+	  $output = drupal_get_form('quick_note_form');
+  } else {
+	  $output = '';
+  }
+  return $output;
+}
+
+
+/**
+*
+* @see Quick Notes form
+*/
+function quick_note_form($form, &$form_state) {
+$submission = get_quick_note_submission();
+$quick_note_message = '';
+
+  //print "<pre>";
+  //print_r($submission);
+  //print "</pre>";
+
+  if(sizeof($submission)) {
+	  foreach($submission as $key=>$quick_note){
+		  $quick_note_message = $quick_note->data[1]['value'][0];
+	  }
+  }
+
+  $form = array();
+  $form['quick_notes'] = array(
+    '#title' => t('Dont forget things, write them down'),
+    '#type' => 'textarea',
+    '#description' => 'Notes are stored as plain text. Please do not jot down sensitive into in here.',
+    '#default_value' => $quick_note_message,
+    '#resizable' => FALSE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save note'),
+    '#prefix' => '<div class="frm-submit">',
+    '#suffix' => '</div>',
+  );
+  return $form;
+}
+
+
+/*  Quick Notes form submit */
+function quick_note_form_submit($form, &$form_state){
+
+$submission = get_quick_note_submission();
+  if(sizeof($submission)) {
+	  foreach($submission as $key=>$quick_note){
+		  $submission[$key]->data[1]['value'][0] = $form_state['values']['quick_notes'];
+		  $sid = $submission[$key]->sid;
+		  $nid = $submission[$key]->nid;
+		  $uid = $submission[$key]->uid;
+	  }
+  }
+
+  $quicknote_updated = db_update('webform_submitted_data')
+  ->fields(array(
+    'data' => $form_state['values']['quick_notes'],
+  ))
+  ->condition('nid', $nid, '=')
+  ->condition('sid', $sid, '=')  
+  ->condition('cid', 1, '=')
+  ->execute();
+
+    drupal_set_message('Your quick note has been updated, Thanks!!!');
+
+}
