@@ -1,0 +1,394 @@
+#main h1.title{  
+    color:#414142;     
+    font-size:40px; 
+    text-transform:uppercase; 
+    margin:0 0 5px; 
+    padding:0;
+}
+.node-edit,
+.views-field-edit-node {
+    position:absolute;
+    z-index:10;
+    margin:0px 0px 0px 0px; 
+}
+.node-edit a,
+.views-field-edit-node a{
+    color:#ffffff !important;
+	font-size:14px;
+	background:#f08630;
+	padding:3px 13px 3px 13px;
+	-moz-border-radius: 6px;
+	border-radius: 4px;
+	text-decoration:underline;
+}
+ul.tabs.primary{
+	overflow:hidden;
+}
+/* 
+====================================================== 
+===================== HEADER TOP =====================
+Header includes main-menu, site search.
+======================================================
+*/
+#header-top{
+    background:#272727;
+    min-height:70px;
+    line-height:45px;
+    margin:0 0 3px 0;
+    padding:0;
+}
+
+/* 
+======================================================
+===================== HEADER TOP =====================
+======================================================
+*/
+.block-system-main-menu ul.menu, .block-system-main-menu ul.menu li, .block-system-main-menu ul.menu li a {
+	line-height:0;
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.block-system-main-menu ul.menu li {
+	float:left;
+	-webkit-box-shadow:1px 0 0 rgba(255,255,255,0.2) inset;
+    -moz-box-shadow:1px 0 0 rgba(255,255,255,0.2) inset;
+    box-shadow:1px 0 0 rgba(255,255,255,0.2) inset;
+}
+.block-system-main-menu ul.menu li.first{
+    -webkit-box-shadow:0 0 0;
+    -moz-box-shadow:0 0 0;
+    box-shadow:0 0 0
+}
+.block-system-main-menu ul.menu li.last{
+    -webkit-box-shadow:1px 0 0 rgba(255,255,255,0.2) inset,1px 0 0 rgba(255,255,255,0.2);
+    -moz-box-shadow:1px 0 0 rgba(255,255,255,0.2) inset,1px 0 0 rgba(255,255,255,0.2);
+    box-shadow:1px 0 0 rgba(255,255,255,0.2) inset,1px 0 0 rgba(255,255,255,0.2);
+}
+.block-system-main-menu ul.menu li a {
+    color:#fff;
+    display:block;
+    font-size:15px;
+    font-weight:bold;
+    line-height:45px;
+    padding:0px 11px 0px 11px;
+    background:url(../images/nav-li-bg.png) repeat-y top right;
+    text-transform:uppercase;
+}
+.block-system-main-menu ul.menu li a span{
+    display:block;
+    padding:12px 0px 12px 0px;
+}
+.block-system-main-menu ul.menu li.first a{
+    padding-left:0px;
+}
+.block-system-main-menu ul.menu li.first span {
+    padding:12px 0px 12px 9px;
+    background:url(../images/nav-li-bg.png) repeat-y top left; 
+}
+.block-system-main-menu ul li a:hover, .block-system-main-menu ul li a.active, .block-system-main-menu ul li a.active-trail {
+    color:#ffc425;
+    background:#000000;
+}
+.block-system-main-menu ul li ul {
+	display:none;
+}
+
+
+.block-search-form{
+    float:right;
+    margin-top:3px;
+}
+.block-search-form .form-item{
+    float:left; 
+    padding-bottom:0px;   
+}
+.block-search-form .form-item label{
+    position:absolute;
+    margin-top:-8px; 
+    font-weight:bold;
+}
+.block-search-form .form-item .form-text{
+    width:210px;
+    margin:0px;
+    font-weight:bold;
+}
+.block-search-form .form-actions .form-submit{
+    border:none;
+    font-size:0px;
+    width:35px;
+    height:32px;
+	cursor:pointer;
+    background:#ffffff url(../images/search-btn.png) no-repeat center -4px;
+    position:relative;
+    margin-top:14px;
+    margin-left:1px;
+	border:1px solid #ccc;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	-ms-border-radius:2px;
+	-o-border-radius:2px;
+	border-radius:2px;
+	-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-transition:all 0.15s linear;
+	-moz-transition:all 0.15s linear;
+	-o-transition:all 0.15s linear;
+	transition:all 0.15s linear;
+}
+
+
+
+/* 
+==================================================
+===================== HEADER =====================
+Header includes logo, login/logout/profile msg.
+for the site.
+==================================================
+*/
+#header{
+    margin:0 0 30px 0;
+    background:#ffc425 url(../images/updated/sec-header-bg.png) no-repeat left bottom;
+	overflow:hidden;
+}
+#header .logo-area{
+    float:left;
+    width:250px;
+    padding-top:25px;
+    margin-left:14px;
+}
+#header .login-profile{    
+    width:125px;
+    float:right;
+    color:#ffffff;
+    margin-right:14px;
+    padding-top:25px;
+}
+#header .login-profile h2.login{
+    margin:0px;
+    color:#000000;
+    font-size:13px;
+    text-align:right;
+    padding:10px 0px 2px 0px;
+    border-bottom:5px solid #000000; 
+    background:url(../images/login-icon.png) no-repeat 61px top;   
+}
+#header .login-profile h2.my-account{
+    margin:0px;
+    color:#000000;
+    font-size:13px;
+    text-align:center;
+    padding:10px 0px 2px 0px;
+    border-bottom:5px solid #000000;   
+}
+#header .login-profile a{
+    color:#000000;    
+}
+#header .login-profile p{
+    text-align:right;
+    line-height:17px;
+    margin-top:3px;
+}
+
+
+/* 
+==================================================
+===================== Footer =====================
+Header includes whole footer
+for the site.
+==================================================
+*/
+.footer{
+    color:#666666;
+    padding:25px 0px 25px 0px;
+    background: none repeat scroll 0 0 #222222;
+	overflow:hidden;
+}
+
+
+
+/* 
+==================================================
+============== Main Content Area =================
+Main content includes, sidebar left, sidebar right,
+content area, for the site.
+==================================================
+*/
+#maindiv{
+	margin-bottom:30px;
+}
+
+
+/* 
+======================================================
+===================== Blog Template.==================
+======================================================
+*/
+/***************** Blog Header **********************/
+
+/*---------------  Blog Slide Show------------------*/
+.block-views-slide-show-fade-block{
+    padding:0px; 
+    padding-bottom:30px;   
+}
+.block-views-slide-show-fade-block .view-slide-show-fade{
+    margin:0px;    
+    border:none;
+}
+.block-views-slide-show-fade-block .views-field-title{
+    position:absolute;     
+    margin-top:-130px;
+    font-size:30px;
+    color:#ffffff;
+    padding:10px 15px 0px 15px;
+    background: url(../images/updated/transparent_bg.png) repeat left top;
+}
+.block-views-slide-show-fade-block .views-field-title h2{
+    width:92%;
+    height:24px;
+    margin:0px;
+    color:#ffffff;
+    font-size:22px;
+    overflow:hidden;
+}
+.block-views-slide-show-fade-block .views-field-title h3{
+    width:92%;
+    margin:0px;
+    color:#ffffff;
+    font-size:11px;
+    font-style:italic;
+    padding:6px 0px 0px 0px; 
+}
+.block-views-slide-show-fade-block .views-field-title p{
+    width:92%;
+    padding-top:15px;   
+}
+.block-views-slide-show-fade-block .views-slideshow-controls-bottom {
+	width:292px;
+	z-index:10;	
+	position:absolute;
+	margin-top:-2px;
+}
+.block-views-slide-show-fade-block .views-slideshow-pager-fields {
+    overflow:hidden;
+    width:292px;
+    margin:auto;
+}
+.block-views-slide-show-fade-block .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
+	float:left;
+	width:56px;
+	height:25px;
+	cursor:pointer;
+	color:#ffffff;
+	text-align:center;
+	background:#272727;
+	padding-top:5px;
+	border-top:1px dotted #fff;
+	border-right:1px dotted #fff;
+}
+.block-views-slide-show-fade-block .views-slideshow-controls-bottom .views-slideshow-pager-field-item.active {
+	background:#ffc425;
+}
+
+/*---------------  Blog Headlines ---------------------*/
+.block-views-blog-headlines-block h2.block-title{
+    margin:0px;
+    color:#414142;     
+    font-size:27px;
+    font-family: 'latobold'; 
+    text-transform:uppercase;     
+    border-bottom:1px solid #414142;
+    padding:0px 0px 1px 20px;
+    background:url(../images/updated/icon-9.png) no-repeat left 4px;
+}
+.block-views-blog-headlines-block .view-content ul,
+.block-views-blog-headlines-block .view-content ul li{
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.block-views-blog-headlines-block .view-content ul li{
+    margin:0px 0px 13px 0px;
+    padding:8px 0px 0px 0px;
+    border-bottom:1px solid #c2c2c2;
+}
+.block-views-blog-headlines-block .view-id-blog_headlines{
+    margin:0px !important;
+    border:none !important;    
+}
+.block-views-blog-headlines-block .views-field-title{
+    color:#414142;     
+    font-size:17px;
+    font-family:'latobold';
+    line-height:17px;
+}
+.block-views-blog-headlines-block .views-field-title a{
+    color:#414142;  
+}
+.block-views-blog-headlines-block .views-field-field-blog-submitted-by .field-content{
+    font-size:12px;
+    font-style:italic;
+}
+/*---------------  Blog Container ---------------------*/
+
+.all-news-heading{
+    padding-top:50px;
+}
+.all-news-heading h2.all-news-title{
+    margin:0px;
+    color:#414142;     
+    font-size:27px;
+    font-family: 'latobold'; 
+    text-transform:uppercase;     
+    border-bottom:1px solid #414142;
+    padding:0px 0px 1px 28px;
+    background:url(../images/updated/icon-3.png) no-repeat left 3px;
+}
+
+.bloglisting{
+    float:left;
+    padding: 0 15px;
+    position: relative;   
+}
+.bloglisting .blog-heading h2.title{
+    margin:25px 0px 7px 0px;
+    color:#414142;     
+    font-size:15px;
+    font-family:'latobold';
+    line-height:19px;
+    text-transform:uppercase;
+    height:36px;
+    overflow:hidden;
+}
+.bloglisting .blog-heading h2.title a{
+    color:#414142;  
+}
+.bloglisting .blog-submitted{
+    font-size:12px;
+    font-style:italic;
+    padding-bottom:13px;    
+    height:39px;
+    overflow:hidden;
+}
+.bloglisting .blog-teaser{
+    height:60px;    
+    overflow:hidden; 
+    line-height:0px;   
+}
+.bloglisting .bottom-border{
+    margin:0px 0px 7px 0px;
+    padding:8px 0px 5px 0px;
+    border-bottom:1px solid #c2c2c2;
+}
+
+.blog-detailpage .container .blog-title h3{
+    font-size:23px;    
+}
+.blog-detailpage .container{
+    padding-right:50px;
+	padding-bottom:20px;
+}
+
